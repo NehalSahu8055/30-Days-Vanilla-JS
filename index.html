@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="js.svg" type="image/x-icon" />
+    <title>Day 1 JS | Drum Kit Web App</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .playing {
+        transition: all 1s linear;
+        border-color: skyblue !important;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flex flex-col justify-center items-center gap-24 min-h-screen">
+      <div class="main_text flex flex-col justify-center items-center gap-4">
+        <p class="flex justify-center items-center font-semibold">
+            <img src="js.svg" width="35" height="35" alt="" />&nbsp;Day 1
+        </p>
+        <h1 class="text-4xl font-semibold text-blue-600">Drum Stick Web App</h1>
+        <p class="text-blue-600">Use keys a,b,c and d</p>
+      </div>
+
+      <div
+        class="drum-container flex justify-center gap-4 items-center bg-sky-50"
+      >
+        <button
+          data-key="65"
+          class="key bg-slate-500 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+        >
+          Sa
+        </button>
+        <button
+          data-key="66"
+          class="key bg-green-400 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+        >
+          Re
+        </button>
+        <button
+          data-key="67"
+          class="key bg-red-300 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+        >
+          Ga
+        </button>
+        <button
+          data-key="68"
+          class="key bg-blue-400 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+        >
+          Ma
+        </button>
+      </div>
+      <div class="audio-container">
+        <audio data-key="65" src="/assets_audio_beep.mp3">Sa</audio>
+        <audio data-key="66" src="/assets_audio_beep.mp3">Re</audio>
+        <audio data-key="67" src="/assets_audio_beep.mp3">Ga</audio>
+        <audio data-key="68" src="/assets_audio_beep.mp3">Ma</audio>
+      </div>
+    </main>
+    <script>
+      const keys = document.querySelectorAll(".key");
+      keys.forEach((key) => {
+        key.addEventListener("transitionend", (e) => {
+          console.log(this);
+          e.target.classList.remove("playing");
+        });
+      });
+      window.addEventListener("keydown", (e) => {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`),
+          key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+        if (!audio) return;
+        //   console.log(audio);
+        audio.currentTime = 0;
+        audio.play();
+        key.classList.add("playing");
+      });
+    </script>
+  </body>
+</html>
