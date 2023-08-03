@@ -6,61 +6,126 @@
     <link rel="shortcut icon" href="js.svg" type="image/x-icon" />
     <title>Day 1 JS | Drum Kit Web App</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+    />
+
     <!-- tailwind cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .playing {
         transition: all 1s linear;
-        border-color: skyblue !important;
+        border-color: blue !important;
         color: white;
       }
     </style>
   </head>
-  <body>
+  <body class="bg-[url('./images/bg.jpg')] bg-fixed bg-cover font-['Audiowide'] min-h-screen">
     <main class="flex flex-col justify-center items-center gap-24 min-h-screen">
       <div class="main_text flex flex-col justify-center items-center gap-4">
-        <p class="flex justify-center items-center font-semibold">
-            <img src="js.svg" width="35" height="35" alt="" />&nbsp;Day 1
-        </p>
-        <h1 class="text-4xl font-semibold text-blue-600">Drum Stick Web App</h1>
-        <p class="text-blue-600">Use keys a,b,c and d</p>
+        <button
+          class="flex justify-center items-center font-semibold absolute top-3 right-0 rounded-tl-2xl rounded-bl-2xl py-1 px-2 hover:pr-5 bg-sky-400 transition-all"
+        >
+          <img src="js.svg" width="35" height="35" alt="" />&nbsp;Day 1
+        </button>
+        <h1 class="text-4xl font-semibold text-purple-300 px-3 text-center">Drum Kit Web App</h1>
+        <p class="text-purple-200 px-4 text-center">Use keys a, b, c, d, e, f and g</p>
       </div>
 
-      <div
-        class="drum-container flex justify-center gap-4 items-center bg-sky-50"
-      >
+      <div class="drum-container flex justify-center gap-4 items-center flex-wrap">
         <button
           data-key="65"
-          class="key bg-slate-500 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url('./images/crash.png')] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md transition-all"
         >
-          Sa
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            a
+          </p>
         </button>
         <button
           data-key="66"
-          class="key bg-green-400 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url('./images/kick.png')] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md transition-all"
         >
-          Re
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            b
+          </p>
         </button>
         <button
           data-key="67"
-          class="key bg-red-300 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url('./images/snare.png')] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md"
         >
-          Ga
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            c
+          </p>
         </button>
         <button
           data-key="68"
-          class="key bg-blue-400 w-9 h-9 relative border-2 border-transparent hover:top-1 hover:border-red-100 rounded-md"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url(./images/tom1.png)] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md"
         >
-          Ma
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            d
+          </p>
+        </button>
+        <button
+          data-key="69"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url(./images/tom2.png)] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md transition-all"
+        >
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            e
+          </p>
+        </button>
+        <button
+          data-key="70"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url(./images/tom3.png)] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md transition-all"
+        >
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            f
+          </p>
+        </button>
+        <button
+          data-key="71"
+          class="key text-purple-700 font-bold text-2xl bg-white bg-[url(./images/tom4.png)] w-[8rem] h-[8rem] relative border-4 border-purple-400 hover:top-1 hover:border-red-100 rounded-md transition-all"
+        >
+          <p
+            class="w-[3rem] h-[3rem] bg-sky-200 border-2 border-purple-500 mx-auto flex justify-center items-center rounded-full opacity-80"
+          >
+            g
+          </p>
         </button>
       </div>
       <div class="audio-container">
-        <audio data-key="65" src="/assets_audio_beep.mp3">Sa</audio>
-        <audio data-key="66" src="/assets_audio_beep.mp3">Re</audio>
-        <audio data-key="67" src="/assets_audio_beep.mp3">Ga</audio>
-        <audio data-key="68" src="/assets_audio_beep.mp3">Ma</audio>
+        <audio data-key="65" src="/drum_kit_web_app/sounds/crash.mp3">a</audio>
+        <audio data-key="66" src="/drum_kit_web_app/sounds/kick-bass.mp3">b</audio>
+        <audio data-key="67" src="/drum_kit_web_app/sounds/snare.mp3">c</audio>
+        <audio data-key="68" src="/drum_kit_web_app/sounds/tom-1.mp3">d</audio>
+        <audio data-key="69" src="/drum_kit_web_app/sounds/tom-1.mp3">e</audio>
+        <audio data-key="70" src="/drum_kit_web_app/sounds/tom-1.mp3">f</audio>
+        <audio data-key="71" src="/drum_kit_web_app/sounds/tom-1.mp3">g</audio>
       </div>
     </main>
+    <footer
+      class="text-black text-center fixed bottom-0 rounded-tr-xl font-semi-bold py-1 px-4 bg-sky-300"
+    >
+      Made with ❤️ by Nehal.
+    </footer>
+
+    <!-- script part JS -->
     <script>
       const keys = document.querySelectorAll(".key");
       keys.forEach((key) => {
@@ -74,7 +139,6 @@
           key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
         if (!audio) return;
-        //   console.log(audio);
         audio.currentTime = 0;
         audio.play();
         key.classList.add("playing");
