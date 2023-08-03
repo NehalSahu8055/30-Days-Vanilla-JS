@@ -4,8 +4,8 @@
  
 ### 🔗 Links
 
-- Solution URL: [Click here](https://github.com/NehalSahu8055/Responsive-Product-Preview-remastered)
-- Live Site URL: [Click here](https://product-preview-remastered-nehal.netlify.app/)
+- Solution URL: [Click here](https://github.com/NehalSahu8055/Day-1-Drum-Kit-Web-App)
+- Live Site URL: [Click here](https://drum-kit-webapp-nehal.netlify.app/)
 
 
 ### 🛠️ Built with
